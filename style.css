@@ -1,0 +1,74 @@
+/*노멀라이즈*/
+body,ul,li{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+/*라이브러리*/
+.con{
+    margin-left: 0;
+    margin-right: 0;
+}
+/*커스텀*/
+.con{
+    max-width: 800px;
+}
+
+.popup-box-1{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    transition: background-color .5s;
+    visibility: hidden;
+}
+
+
+.popup-box-1 >.popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    border:  10px solid black;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform : translateX(-50%) translateY(-50%);
+}
+
+
+.popup-box-1 >.popup > .head > .btn-close{
+    width: 25px;
+    height: 25px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.popup-box-1 >.popup > .head > .btn-close::before,.popup-box-1 >.popup > .head > .btn-close::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    transform: rotate(45deg);
+    
+}
+
+.popup-box-1 >.popup > .head > .btn-close::after{
+   transform: rotate(-45deg); 
+}
+.popup-box-1 >.popup > .head > .btn-close:hover {
+   transform: rotate(10deg); 
+}
+html.popup-1-active .popup-box-1{
+    visibility: visible;
+    background-color: rgba(0,0,0,0.5);
+}
+html.popup-1-active ,html.popup-1-active >body{
+    overflow-y: hidden;
+}
